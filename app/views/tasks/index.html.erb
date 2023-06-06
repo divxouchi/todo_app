@@ -10,8 +10,9 @@
   </div>
 <% end %>
 
+<h2>未完了タスク (<%= @incomplete_tasks.count %>)個</h2>
 <ul>
-  <% @tasks.each do |task| %>
+  <% @incomplete_tasks.each do |task| %>
     <li class="task-item">
       <%= form_with(model: task, class: "task-update-form", local: true, method: :patch) do |form| %>
       <%= form.check_box :completed, task.completed ? {checked: true} : {}, 'true', 'false' %>
@@ -22,4 +23,19 @@
     </li>
   <% end %>
 </ul>
+
+<h2>完了済み</h2>
+<ul>
+  <% @completed_tasks.each do |task| %>
+    <li class="task-item">
+      <%= form_with(model: task, class: "task-update-form", local: true, method: :patch) do |form| %>
+      <%= form.check_box :completed, task.completed ? {checked: true} : {}, 'true', 'false' %>
+      <%= form.label :completed, task.title, class: task.completed ? 'completed' : '' %>
+      <%= form.submit 'Update Task', class: 'update-button' %>
+      <% end %>
+      <%= button_to 'Delete', task, method: :delete, data: { confirm: 'Are you sure?' }, class: 'delete-button' %>
+    </li>
+  <% end %>
+</ul>
+
 
