@@ -4,6 +4,10 @@
     <%= form.label 'リスト' %>
     <%= form.text_field :title, class: 'text-field' %>
   </div>
+  <div>
+    <%= form.label :due_date %>
+    <%= form.date_field :due_date %>
+  </div>
   
   <div>
     <%= form.submit 'Add Task', class: 'add-button' %>
@@ -20,6 +24,7 @@
       <%= form.submit 'Update Task', class: 'update-button' %>
       <% end %>
       <%= button_to 'Delete', task, method: :delete, data: { confirm: 'Are you sure?' }, class: 'delete-button' %>
+      <span style="<%= 'color: red;' if task.due_date == Date.today %>">期限: <%= task.due_date %></span>
     </li>
   <% end %>
 </ul>
