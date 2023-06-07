@@ -3,8 +3,10 @@ class TasksController < ApplicationController
 
   # GET /tasks or /tasks.json
   def index
-    @tasks = Task.all
+    @completed_tasks = Task.where(completed: 1)
+    @incomplete_tasks = Task.where(completed: 0 )
   end
+  
 
   # GET /tasks/1 or /tasks/1.json
   def show
@@ -55,7 +57,7 @@ class TasksController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def task_params
-      params.require(:task).permit(:title, :completed)
+      params.require(:task).permit(:title, :completed, :due_date)
     end
 end
 
