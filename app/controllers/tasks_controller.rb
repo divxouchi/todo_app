@@ -5,6 +5,7 @@ class TasksController < ApplicationController
   def index
     @completed_tasks = Task.where(completed: 1)
     @incomplete_tasks = Task.where(completed: 0 )
+    @today_tasks = Task.where(due_date: Date.today).where(completed: 0 )
   end
   
 

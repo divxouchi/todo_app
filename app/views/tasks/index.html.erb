@@ -14,7 +14,7 @@
   </div>
 <% end %>
 
-<h2>未完了タスク (<%= @incomplete_tasks.count %>)個</h2>
+<h2>本日のタスク(<%= @today_tasks.count %>)個&emsp;未完了タスク (<%= @incomplete_tasks.count %>)個</h2>
 <ul>
   <% @incomplete_tasks.each do |task| %>
     <li class="task-item">
