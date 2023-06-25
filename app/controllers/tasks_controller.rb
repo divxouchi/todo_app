@@ -1,5 +1,6 @@
 class TasksController < ApplicationController
   before_action :set_task, only: %i[ show edit update destroy ]
+  before_action :basic_auth
 
   # GET /tasks or /tasks.json
   def index
@@ -62,6 +63,12 @@ end
     # Only allow a list of trusted parameters through.
     def task_params
       params.require(:task).permit(:title, :completed, :due_date)
+    end
+
+    def basic_auth
+      authenticate_or_request_with_http_basic do |username, password|
+        username == 'mouchi' && password == '123456'
+      end
     end
 end
 
