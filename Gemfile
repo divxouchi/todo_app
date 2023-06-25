@@ -80,4 +80,7 @@ group :test do
   gem "selenium-webdriver"
   gem "webdrivers"
 end
+gem 'simple_calendar'
 
+gem 'bootstrap', '~> 5.0.0'
+gem 'holidays' 

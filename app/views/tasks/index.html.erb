@@ -14,7 +14,32 @@
   </div>
 <% end %>
 
-<h2>未完了タスク (<%= @incomplete_tasks.count %>)個</h2>
+
+
+
+<%= month_calendar do |date| %>
+  <% day_class = if date.wday == 0 || Holidays.on(date, :jp).any?
+                 'holiday'
+               elsif date.wday == 6
+                 'saturday'
+               else
+                 ''
+               end %>
+
+<div class="<%= day_class %>">
+  <%= date.strftime("%-m/%-d") %>
+  <!-- ... -->
+</div>
+
+  <% tasks = @tasks_by_date[date] %>
+  <% if tasks %>
+    <div class="task-count">
+      <%= tasks.count %> 件のタスク
+    </div>
+  <% end %>
+<% end %>
+
+<h2>未完了タスク (<%= @incomplete_tasks.count %>)件</h2>
 <ul>
   <% @incomplete_tasks.each do |task| %>
     <li class="task-item">

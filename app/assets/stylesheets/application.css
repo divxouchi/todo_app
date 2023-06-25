@@ -172,3 +172,90 @@ ul {
 .delete-button:hover {
   background-color: #c23616;
 }
+
+
+.calendar {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Adjust this as needed */
+
+  border-collapse: collapse;
+}
+
+.calendar td {
+  width: 14.2857143%;
+  border: 1px solid #ccc;
+  vertical-align: top;
+}
+
+.calendar td .day {
+  display: block;
+  text-align: right;
+  font-size: 12px;
+  color: #ccc;
+  padding: 5px;
+}
+
+.calendar td ul {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+.calendar .wday-0 {
+  background: #f8f8f8;
+}
+
+.calendar .today {
+  background: #e9ecef;
+}
+
+/* カレンダーセル全体 */
+.simple-calendar .day {
+  width: 60px; /* 一週間が7日なので、100% ÷ 7 */
+  height: 60px; /* 一週間が7日なので、100% ÷ 7 */
+  border: 1px solid #ddd;
+  padding: 10px;
+  vertical-align: top;
+  list-style: none;
+}
+
+/* セル内の日付 */
+.simple-calendar .day .date {
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+/* タスクリスト */
+.simple-calendar .day ul {
+  padding: 0;
+  margin: 0;
+}
+
+/* タスクリストの各項目 */
+.simple-calendar .day ul li {
+  background-color: #f9f9f9;
+  border-radius: 4px;
+  padding: 4px;
+  margin-bottom: 4px;
+  font-size: 0.8em;
+}
+
+.holiday {
+  background-color: #ffcccc; /* これは赤系の色です */
+  color: #fff; /* テキストの色を白に設定します */
+}
+
+.saturday {
+  background-color: #ccccff; /* これは青系の色です */
+  color: #fff; /* テキストの色を白に設定します */
+}
+
+.task-count {
+  background-color: #ccc; /* 背景色を灰色に設定 */
+  color: #fff; /* テキストの色を白に設定 */
+  padding: 2px; /* パディングを追加 */
+  border-radius: 4px; /* ボーダーの角を丸くする */
+}

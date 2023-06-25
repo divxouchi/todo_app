@@ -5,6 +5,7 @@ class TasksController < ApplicationController
   def index
     @completed_tasks = Task.where(completed: 1)
     @incomplete_tasks = Task.where(completed: 0 )
+    @tasks_by_date = Task.all.group_by { |task| task.due_date }
   end
   
 
