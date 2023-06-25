@@ -67,7 +67,7 @@ end
 
     def basic_auth
       authenticate_or_request_with_http_basic do |username, password|
-        username == 'mouchi' && password == '123456'
+        username == 'ouchi' && password == '123456'
       end
     end
 end
