@@ -22,6 +22,7 @@
       <%= form.check_box :completed, task.completed ? {checked: true} : {}, 'true', 'false' %>
       <%= form.label :completed, task.title, class: task.completed ? 'completed' : '' %>
       <%= form.submit 'Update Task', class: 'update-button' %>
+      <%= link_to 'Edit', edit_task_path(task), class: 'edit-button' %>
       <% end %>
       <%= button_to 'Delete', task, method: :delete, data: { confirm: 'Are you sure?' }, class: 'delete-button' %>
       <span style="<%= 'color: red;' if task.due_date == Date.today %>">期限: <%= task.due_date %></span>
