@@ -113,6 +113,62 @@ ul {
   cursor: pointer;
 }
 
+/* application.css */
+
+.edit-button {
+  background-color: #ffc107;
+  color: black;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.edit-button:hover {
+  background-color: #c79100;
+}
+
+.edit-form {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
+}
+
+.edit-form input[type="text"], .edit-form input[type="date"] {
+  margin-right: 10px;
+  height: 30px
+}
+
+.save-button {
+  background-color: #007BFF;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.save-button:hover {
+  background-color: #0056b3;
+}
+
+.back-button {
+  display: inline-block;
+  background-color: #6c757d;
+  color: white;
+  padding: 10px 20px;
+  margin-top: 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.back-button:hover {
+  background-color: #5a6268;
+}
+
+
 .delete-button:hover {
   background-color: #c23616;
 }
