@@ -5,7 +5,7 @@ class TasksController < ApplicationController
   def index
     @completed_tasks = Task.where(completed: 1)
     @incomplete_tasks = Task.where(completed: 0 )
-    @tasks_by_date = Task.all.group_by { |task| task.due_date }
+    @tasks_by_date = Task.where(completed: 0).group_by { |task| task.due_date }
   end
   
 
@@ -27,7 +27,9 @@ class TasksController < ApplicationController
     if @task.save
       redirect_to tasks_url, notice: 'Task was successfully created.'
     else
-      @tasks = Task.all
+      @completed_tasks = Task.where(completed: 1)
+      @incomplete_tasks = Task.where(completed: 0)
+      @tasks_by_date = Task.where(completed: 0).group_by { |task| task.due_date }
       render :index
     end
   end

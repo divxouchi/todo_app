@@ -38,8 +38,11 @@
     </div>
   <% end %>
 <% end %>
-
+<% if @incomplete_tasks.count > 0%>
 <h2>未完了タスク (<%= @incomplete_tasks.count %>)件</h2>
+<%else%>
+<h2>現在登録されているタスクはありません</h2>
+<% end %>
 <ul>
   <% @incomplete_tasks.each do |task| %>
     <li class="task-item">
@@ -54,8 +57,11 @@
     </li>
   <% end %>
 </ul>
-
+<% if @completed_tasks.count > 0%>
 <h2>完了済み</h2>
+<% end %>
+<ul>
+
 <ul>
   <% @completed_tasks.each do |task| %>
     <li class="task-item">

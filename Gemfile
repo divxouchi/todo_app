@@ -84,3 +84,4 @@ gem 'simple_calendar'
 
 gem 'bootstrap', '~> 5.0.0'
 gem 'holidays' 
+gem 'pry-rails'
