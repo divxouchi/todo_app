@@ -13,6 +13,7 @@
  *= require_tree .
  *= require_self
  */
+
  body {
   font-family: Arial, sans-serif;
   margin: 0;
@@ -258,4 +259,6 @@ ul {
   color: #fff; /* テキストの色を白に設定 */
   padding: 2px; /* パディングを追加 */
   border-radius: 4px; /* ボーダーの角を丸くする */
+  font-size: 0.7em; /* フォントサイズを小さくする */
+  margin-top: 2px;
 }
